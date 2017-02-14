@@ -37,12 +37,13 @@
 			// 
 			// text_code_form
 			// 
-			this.text_code_form.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+			this.text_code_form.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.text_code_form.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+			this.text_code_form.BackColor = System.Drawing.Color.White;
 			this.text_code_form.Location = new System.Drawing.Point(12, 12);
 			this.text_code_form.Name = "text_code_form";
-			this.text_code_form.Size = new System.Drawing.Size(364, 100);
+			this.text_code_form.Size = new System.Drawing.Size(422, 105);
 			this.text_code_form.TabIndex = 0;
 			this.text_code_form.Text = "";
 			// 
@@ -62,10 +63,10 @@
 			this.text_dekod_form.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.text_dekod_form.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+			this.text_dekod_form.BackColor = System.Drawing.Color.White;
 			this.text_dekod_form.Location = new System.Drawing.Point(12, 177);
 			this.text_dekod_form.Name = "text_dekod_form";
-			this.text_dekod_form.Size = new System.Drawing.Size(364, 105);
+			this.text_dekod_form.Size = new System.Drawing.Size(422, 110);
 			this.text_dekod_form.TabIndex = 2;
 			this.text_dekod_form.Text = "";
 			// 
@@ -73,16 +74,16 @@
 			// 
 			this.key_from_form.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.key_from_form.BackColor = System.Drawing.Color.Aqua;
+			this.key_from_form.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
 			this.key_from_form.Location = new System.Drawing.Point(83, 135);
 			this.key_from_form.Name = "key_from_form";
-			this.key_from_form.Size = new System.Drawing.Size(293, 20);
+			this.key_from_form.Size = new System.Drawing.Size(351, 20);
 			this.key_from_form.TabIndex = 3;
 			// 
 			// kodiraj
 			// 
 			this.kodiraj.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.kodiraj.Location = new System.Drawing.Point(382, 12);
+			this.kodiraj.Location = new System.Drawing.Point(440, 12);
 			this.kodiraj.Name = "kodiraj";
 			this.kodiraj.Size = new System.Drawing.Size(75, 23);
 			this.kodiraj.TabIndex = 4;
@@ -93,7 +94,7 @@
 			// dekodiraj
 			// 
 			this.dekodiraj.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.dekodiraj.Location = new System.Drawing.Point(382, 177);
+			this.dekodiraj.Location = new System.Drawing.Point(440, 177);
 			this.dekodiraj.Name = "dekodiraj";
 			this.dekodiraj.Size = new System.Drawing.Size(75, 23);
 			this.dekodiraj.TabIndex = 5;
@@ -104,7 +105,7 @@
 			// izbrisi_tekst_dekod
 			// 
 			this.izbrisi_tekst_dekod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.izbrisi_tekst_dekod.Location = new System.Drawing.Point(382, 206);
+			this.izbrisi_tekst_dekod.Location = new System.Drawing.Point(440, 206);
 			this.izbrisi_tekst_dekod.Name = "izbrisi_tekst_dekod";
 			this.izbrisi_tekst_dekod.Size = new System.Drawing.Size(75, 23);
 			this.izbrisi_tekst_dekod.TabIndex = 6;
@@ -115,7 +116,7 @@
 			// izbrisi_tekst_kod
 			// 
 			this.izbrisi_tekst_kod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.izbrisi_tekst_kod.Location = new System.Drawing.Point(382, 41);
+			this.izbrisi_tekst_kod.Location = new System.Drawing.Point(440, 41);
 			this.izbrisi_tekst_kod.Name = "izbrisi_tekst_kod";
 			this.izbrisi_tekst_kod.Size = new System.Drawing.Size(75, 23);
 			this.izbrisi_tekst_kod.TabIndex = 7;
@@ -126,7 +127,7 @@
 			// izbrisi_kljuc
 			// 
 			this.izbrisi_kljuc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.izbrisi_kljuc.Location = new System.Drawing.Point(382, 135);
+			this.izbrisi_kljuc.Location = new System.Drawing.Point(440, 135);
 			this.izbrisi_kljuc.Name = "izbrisi_kljuc";
 			this.izbrisi_kljuc.Size = new System.Drawing.Size(75, 23);
 			this.izbrisi_kljuc.TabIndex = 8;
@@ -138,7 +139,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(469, 294);
+			this.ClientSize = new System.Drawing.Size(527, 299);
 			this.Controls.Add(this.izbrisi_kljuc);
 			this.Controls.Add(this.izbrisi_tekst_kod);
 			this.Controls.Add(this.izbrisi_tekst_dekod);
@@ -148,6 +149,7 @@
 			this.Controls.Add(this.text_dekod_form);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.text_code_form);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;

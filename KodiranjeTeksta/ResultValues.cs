@@ -22,6 +22,5 @@ namespace KodiranjeTeksta {
 				this.values[index] = value;
 			}
 		}
-
 	}
 }

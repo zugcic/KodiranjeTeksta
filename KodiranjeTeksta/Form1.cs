@@ -124,7 +124,7 @@ namespace KodiranjeTeksta {
 		private void kodiraj_Click(object sender, EventArgs e) {
 
 			if (text_code_form.Text == "") {
-				text_code_form.Text = "Morate upisati neki text!";
+				text_code_form.Text = "Morate upisati neki tekst!";
 				return;
 			}
 
@@ -155,7 +155,7 @@ namespace KodiranjeTeksta {
 			ResultValues result_values = new ResultValues(text_to_code.Length);
 
 			SetValuesFromText(text_values, text_to_code.Length, text_to_code, d);
-			SetValuesFromKey(key_values, text_to_code.Length, key, d);
+			SetValuesFromKey(key_values, key.Length, key, d);
 			
 
 			for (int i = 0;i < key.Length;++i) {
