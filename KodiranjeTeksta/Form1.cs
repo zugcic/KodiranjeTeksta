@@ -31,28 +31,28 @@ namespace KodiranjeTeksta {
 			return longer;
 		}
 
-		void SetValuesFromText(TextValues text_array,int length,string text,Dictionary<char,int> d) {
+		void SetValuesFromText(TextValues text_values,int length,string text,Dictionary<char,int> d) {
 		   //postavljanje vrijednosti znakova iz teksta u niz 
 			for (int i = 0;i < length;++i) {
 
 				for (int j = 0;j < 2048;++j) {
 
 					if (text.ElementAt(i) == d.ElementAt(j).Key) {
-						text_array[i]= d.ElementAt(j).Value;
+						text_values[i]= d.ElementAt(j).Value;
 						break;
 					}
 				}
 			}
 		}
 
-		void SetValuesFromKey(KeyValues key_array, int length, string text, Dictionary<char, int> d) {
-			//postavljanje vrijednosti znakova iz teksta u niz 
+		void SetValuesFromKey(KeyValues key_values, int length, string text, Dictionary<char, int> d) {
+			//postavljanje vrijednosti znakova iz ključa u niz 
 			for (int i = 0;i < length;++i) {
 
 				for (int j = 0;j < 2048;++j) {
 
 					if (text.ElementAt(i) == d.ElementAt(j).Key) {
-						key_array[i] = d.ElementAt(j).Value;
+						key_values[i] = d.ElementAt(j).Value;
 						break;
 					}
 				}
@@ -73,6 +73,11 @@ namespace KodiranjeTeksta {
 
 			Dictionary<char, int> d = new Dictionary<char, int>();
 
+			for (int i = 0;i < 2048;++i) {
+
+				d.Add((char)(' ' + i), i);
+			}
+
 			string text_to_decode = text_dekod_form.Text;
 			string key = key_from_form.Text;
 
@@ -85,12 +90,7 @@ namespace KodiranjeTeksta {
 
 			TextValues text_values = new TextValues(text_to_decode.Length);
 			KeyValues key_values = new KeyValues(text_to_decode.Length);
-			ResultValues result_values = new ResultValues(text_to_decode.Length);
-
-			for (int i = 0;i < 2048;++i) {
-
-				d.Add((char)(' ' + i), i);
-			}
+			ResultValues result_values = new ResultValues(text_to_decode.Length);	
 
 			SetValuesFromText(text_values, text_to_decode.Length, text_to_decode, d);
 			SetValuesFromKey(key_values, key.Length, key, d);
@@ -135,6 +135,11 @@ namespace KodiranjeTeksta {
 
 			Dictionary<char, int> d = new Dictionary<char, int>();
 
+			for (int i = 0;i < 2048;++i) {
+
+				d.Add((char)(' ' + i), i);
+			}
+
 			string text_to_code =text_code_form.Text;
 			string key = key_from_form.Text;
 
@@ -148,11 +153,6 @@ namespace KodiranjeTeksta {
 			TextValues text_values = new TextValues(text_to_code.Length);
 			KeyValues key_values = new KeyValues(text_to_code.Length);
 			ResultValues result_values = new ResultValues(text_to_code.Length);
-
-			for (int i = 0;i < 2048;++i) {
-
-				d.Add((char)(' ' + i), i);
-			}
 
 			SetValuesFromText(text_values, text_to_code.Length, text_to_code, d);
 			SetValuesFromKey(key_values, text_to_code.Length, key, d);
