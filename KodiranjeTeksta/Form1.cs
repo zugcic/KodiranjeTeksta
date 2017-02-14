@@ -16,7 +16,7 @@ namespace KodiranjeTeksta {
 		}
 
 
-		public static string KeyLonger(string word, string key) {
+		 string KeyLonger(string word, string key) {	//	metoda vraća prošireni ključ
 
 			string longer = String.Empty;
 			
