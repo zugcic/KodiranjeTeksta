@@ -57,14 +57,14 @@ namespace KodiranjeTeksta {
 			int[] values1 = new int[word.Length];
 			int[] result = new int[word.Length];
 
-			for (int i = 0;i < 1920;++i) {
+			for (int i = 0;i < 2048;++i) {
 
 				d.Add((char)(' ' + i), i);
 			}
 
 			for (int i = 0;i < word.Length;++i) {
 
-				for (int j = 0;j < 1920;++j) {
+				for (int j = 0;j < 2048;++j) {
 
 					if (word.ElementAt(i) == d.ElementAt(j).Key) {
 						values[i] = d.ElementAt(j).Value;
@@ -75,7 +75,7 @@ namespace KodiranjeTeksta {
 
 			for (int i = 0;i < key.Length;++i) {
 
-				for (int j = 0;j < 1920;++j) {
+				for (int j = 0;j < 2048;++j) {
 
 					if (key.ElementAt(i) == d.ElementAt(j).Key) {
 						values1[i] = d.ElementAt(j).Value;
@@ -88,7 +88,7 @@ namespace KodiranjeTeksta {
 
 				result[i] = values[i] - values1[i];
 				if (result[i] < 0) {
-					result[i] = result[i] + 1920;
+					result[i] = result[i] + 2048;
 				}
 			}
 			string kodtext = string.Empty;
@@ -96,7 +96,7 @@ namespace KodiranjeTeksta {
 			for (int i = 0;i < key.Length;++i) {
 
 
-				for (int j = 0;j < 1920;++j) {
+				for (int j = 0;j < 2048;++j) {
 
 					if (result[i] == d.ElementAt(j).Value) {
 						kodtext += d.ElementAt(j).Key;
@@ -134,14 +134,14 @@ namespace KodiranjeTeksta {
 			int[] values1 = new int[word.Length];
 			int[] result = new int[word.Length];
 
-			for (int i = 0;i < 1920;++i) {
+			for (int i = 0;i < 2048;++i) {
 
 				d.Add((char)(' ' + i), i);
 			}
 
 			for (int i = 0;i < word.Length;++i) {
 
-				for (int j = 0;j < 1920;++j) {
+				for (int j = 0;j < 2048;++j) {
 
 					if (word.ElementAt(i) == d.ElementAt(j).Key) {
 						values[i] = d.ElementAt(j).Value;
@@ -164,8 +164,8 @@ namespace KodiranjeTeksta {
 			for (int i = 0;i < key.Length;++i) {
 
 				result[i] = values[i] + values1[i];                     
-				if (result[i] > 1920) {
-					result[i] = result[i] % 1920;
+				if (result[i] > 2048) {
+					result[i] = result[i] % 2048;
 				}
 			}
 			string dekodtext = string.Empty;
@@ -173,7 +173,7 @@ namespace KodiranjeTeksta {
 			for (int i = 0;i < key.Length;++i) {
 
 				
-				for (int j = 0;j < 1920;++j) {
+				for (int j = 0;j < 2048;++j) {
 
 					if (result[i] == d.ElementAt(j).Value) {
 						dekodtext+= d.ElementAt(j).Key;
