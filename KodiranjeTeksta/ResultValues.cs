@@ -5,11 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace KodiranjeTeksta {
-	class TextValues {
+	class ResultValues {
 
 		int[] values;
 
-		public TextValues(int num) {
+		public ResultValues(int num) {
 
 			this.values = new int[num];
 		}
@@ -22,5 +22,6 @@ namespace KodiranjeTeksta {
 				this.values[index] = value;
 			}
 		}
+
 	}
 }

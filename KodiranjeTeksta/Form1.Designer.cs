@@ -24,10 +24,10 @@
 		/// </summary>
 		private void InitializeComponent() {
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-			this.kod = new System.Windows.Forms.RichTextBox();
+			this.text_code_form = new System.Windows.Forms.RichTextBox();
 			this.label1 = new System.Windows.Forms.Label();
-			this.dekod = new System.Windows.Forms.RichTextBox();
-			this.kljuc = new System.Windows.Forms.TextBox();
+			this.text_dekod_form = new System.Windows.Forms.RichTextBox();
+			this.key_from_form = new System.Windows.Forms.TextBox();
 			this.kodiraj = new System.Windows.Forms.Button();
 			this.dekodiraj = new System.Windows.Forms.Button();
 			this.izbrisi_tekst_dekod = new System.Windows.Forms.Button();
@@ -37,11 +37,11 @@
 			// 
 			// kod
 			// 
-			this.kod.Location = new System.Drawing.Point(12, 12);
-			this.kod.Name = "kod";
-			this.kod.Size = new System.Drawing.Size(364, 100);
-			this.kod.TabIndex = 0;
-			this.kod.Text = "";
+			this.text_code_form.Location = new System.Drawing.Point(12, 12);
+			this.text_code_form.Name = "kod";
+			this.text_code_form.Size = new System.Drawing.Size(364, 100);
+			this.text_code_form.TabIndex = 0;
+			this.text_code_form.Text = "";
 			// 
 			// label1
 			// 
@@ -54,18 +54,18 @@
 			// 
 			// dekod
 			// 
-			this.dekod.Location = new System.Drawing.Point(12, 177);
-			this.dekod.Name = "dekod";
-			this.dekod.Size = new System.Drawing.Size(364, 92);
-			this.dekod.TabIndex = 2;
-			this.dekod.Text = "";
+			this.text_dekod_form.Location = new System.Drawing.Point(12, 177);
+			this.text_dekod_form.Name = "dekod";
+			this.text_dekod_form.Size = new System.Drawing.Size(364, 111);
+			this.text_dekod_form.TabIndex = 2;
+			this.text_dekod_form.Text = "";
 			// 
 			// kljuc
 			// 
-			this.kljuc.Location = new System.Drawing.Point(83, 135);
-			this.kljuc.Name = "kljuc";
-			this.kljuc.Size = new System.Drawing.Size(293, 20);
-			this.kljuc.TabIndex = 3;
+			this.key_from_form.Location = new System.Drawing.Point(83, 135);
+			this.key_from_form.Name = "kljuc";
+			this.key_from_form.Size = new System.Drawing.Size(293, 20);
+			this.key_from_form.TabIndex = 3;
 			// 
 			// kodiraj
 			// 
@@ -127,10 +127,10 @@
 			this.Controls.Add(this.izbrisi_tekst_dekod);
 			this.Controls.Add(this.dekodiraj);
 			this.Controls.Add(this.kodiraj);
-			this.Controls.Add(this.kljuc);
-			this.Controls.Add(this.dekod);
+			this.Controls.Add(this.key_from_form);
+			this.Controls.Add(this.text_dekod_form);
 			this.Controls.Add(this.label1);
-			this.Controls.Add(this.kod);
+			this.Controls.Add(this.text_code_form);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MaximizeBox = false;
@@ -144,10 +144,10 @@
 
 		#endregion
 
-		private System.Windows.Forms.RichTextBox kod;
+		private System.Windows.Forms.RichTextBox text_code_form;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.RichTextBox dekod;
-		private System.Windows.Forms.TextBox kljuc;
+		private System.Windows.Forms.RichTextBox text_dekod_form;
+		private System.Windows.Forms.TextBox key_from_form;
 		private System.Windows.Forms.Button kodiraj;
 		private System.Windows.Forms.Button dekodiraj;
 		private System.Windows.Forms.Button izbrisi_tekst_dekod;

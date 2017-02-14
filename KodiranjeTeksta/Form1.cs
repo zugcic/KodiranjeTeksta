@@ -31,64 +31,76 @@ namespace KodiranjeTeksta {
 			return longer;
 		}
 
+		void SetValuesFromText(TextValues text_array,int length,string text,Dictionary<char,int> d) {
+		   //postavljanje vrijednosti znakova iz teksta u niz 
+			for (int i = 0;i < length;++i) {
+
+				for (int j = 0;j < 2048;++j) {
+
+					if (text.ElementAt(i) == d.ElementAt(j).Key) {
+						text_array[i]= d.ElementAt(j).Value;
+						break;
+					}
+				}
+			}
+		}
+
+		void SetValuesFromKey(KeyValues key_array, int length, string text, Dictionary<char, int> d) {
+			//postavljanje vrijednosti znakova iz teksta u niz 
+			for (int i = 0;i < length;++i) {
+
+				for (int j = 0;j < 2048;++j) {
+
+					if (text.ElementAt(i) == d.ElementAt(j).Key) {
+						key_array[i] = d.ElementAt(j).Value;
+						break;
+					}
+				}
+			}
+		}
+
 		private void dekodiraj_Click(object sender, EventArgs e) {
 
-			if (dekod.Text == "") {
-				dekod.Text = "Morate upisati neki tekst!";
+			if (text_dekod_form.Text == "") {
+				text_dekod_form.Text = "Morate upisati neki tekst!";
 				return;
 			}
 
-			if (kljuc.Text == ""){
-				kljuc.Text = "Morate upisati neki ključ!";
+			if (key_from_form.Text == ""){
+				key_from_form.Text = "Morate upisati neki ključ!";
 				return;
 			}
 
 			Dictionary<char, int> d = new Dictionary<char, int>();
-			string word = dekod.Text;
-			string key = kljuc.Text;
 
-			if (key.Length > word.Length) {
-				dekod.Text = "Prekratka riječ, duljina teksta mora biti dulja od duljine ključa!";
+			string text_to_decode = text_dekod_form.Text;
+			string key = key_from_form.Text;
+
+			if (key.Length > text_to_decode.Length) {
+				text_dekod_form.Text = "Prekratka riječ, duljina teksta mora biti dulja od duljine ključa!";
 				return;
 			}
 
-			key = KeyLonger(word, key);
-			int[] values = new int[word.Length];
-			int[] values1 = new int[word.Length];
-			int[] result = new int[word.Length];
+			key = KeyLonger(text_to_decode, key);  //poziv funkcije za proširenje ključa
+
+			TextValues text_values = new TextValues(text_to_decode.Length);
+			KeyValues key_values = new KeyValues(text_to_decode.Length);
+			ResultValues result_values = new ResultValues(text_to_decode.Length);
 
 			for (int i = 0;i < 2048;++i) {
 
 				d.Add((char)(' ' + i), i);
 			}
 
-			for (int i = 0;i < word.Length;++i) {
+			SetValuesFromText(text_values, text_to_decode.Length, text_to_decode, d);
+			SetValuesFromKey(key_values, key.Length, key, d);
 
-				for (int j = 0;j < 2048;++j) {
-
-					if (word.ElementAt(i) == d.ElementAt(j).Key) {
-						values[i] = d.ElementAt(j).Value;
-						break;
-					}
-				}
-			}
 
 			for (int i = 0;i < key.Length;++i) {
 
-				for (int j = 0;j < 2048;++j) {
-
-					if (key.ElementAt(i) == d.ElementAt(j).Key) {
-						values1[i] = d.ElementAt(j).Value;
-						break;
-					}
-				}
-			}
-
-			for (int i = 0;i < key.Length;++i) {
-
-				result[i] = values[i] - values1[i];
-				if (result[i] < 0) {
-					result[i] = result[i] + 2048;
+				result_values[i] = text_values[i] - key_values[i];
+				if (result_values[i] < 0) {
+					result_values[i] = result_values[i] + 2048;
 				}
 			}
 			string kodtext = string.Empty;
@@ -98,74 +110,59 @@ namespace KodiranjeTeksta {
 
 				for (int j = 0;j < 2048;++j) {
 
-					if (result[i] == d.ElementAt(j).Value) {
+					if (result_values[i] == d.ElementAt(j).Value) {
 						kodtext += d.ElementAt(j).Key;
 						break;
 					}
 				}
 			}
-			kod.Text = kodtext;
+
+			text_code_form.Text = kodtext;
 
 		}
 
 		private void kodiraj_Click(object sender, EventArgs e) {
 
-			if (kod.Text == "") {
-				kod.Text = "Morate upisati neki text!";
+			if (text_code_form.Text == "") {
+				text_code_form.Text = "Morate upisati neki text!";
 				return;
 			}
 
-			if (kljuc.Text == "") {
-				kljuc.Text = "Morate upisati neki ključ!";
+			if (key_from_form.Text == "") {
+				key_from_form.Text = "Morate upisati neki ključ!";
 				return;
 			}
 
 			Dictionary<char, int> d = new Dictionary<char, int>();
-			string word =kod.Text;
-			string key = kljuc.Text;
 
-			if (key.Length > word.Length) {
-				kod.Text = "Prekratka riječ, duljina teksta mora biti dulja od duljine ključa!";
+			string text_to_code =text_code_form.Text;
+			string key = key_from_form.Text;
+
+			if (key.Length > text_to_code.Length) {
+				text_code_form.Text = "Prekratka riječ, duljina teksta mora biti dulja od duljine ključa!";
 				return;
 			}
 
-			key =KeyLonger(word, key);
-			int[] values = new int[word.Length];
-			int[] values1 = new int[word.Length];
-			int[] result = new int[word.Length];
+			key=KeyLonger(text_to_code, key);  //poziv funkcije za proširenje ključa
+
+			TextValues text_values = new TextValues(text_to_code.Length);
+			KeyValues key_values = new KeyValues(text_to_code.Length);
+			ResultValues result_values = new ResultValues(text_to_code.Length);
 
 			for (int i = 0;i < 2048;++i) {
 
 				d.Add((char)(' ' + i), i);
 			}
 
-			for (int i = 0;i < word.Length;++i) {
-
-				for (int j = 0;j < 2048;++j) {
-
-					if (word.ElementAt(i) == d.ElementAt(j).Key) {
-						values[i] = d.ElementAt(j).Value;
-						break;
-					}
-				}
-			}
+			SetValuesFromText(text_values, text_to_code.Length, text_to_code, d);
+			SetValuesFromKey(key_values, text_to_code.Length, key, d);
+			
 
 			for (int i = 0;i < key.Length;++i) {
 
-				for (int j = 0;j < 1920;++j) {
-
-					if (key.ElementAt(i) == d.ElementAt(j).Key) {
-						values1[i] = d.ElementAt(j).Value;
-						break;
-					}
-				}
-			}
-
-			for (int i = 0;i < key.Length;++i) {
-
-				result[i] = values[i] + values1[i];                     
-				if (result[i] > 2048) {
-					result[i] = result[i] % 2048;
+				result_values[i] = text_values[i] + key_values[i];                     
+				if (result_values[i] > 2048) {
+					result_values[i] = result_values[i] % 2048;
 				}
 			}
 			string dekodtext = string.Empty;
@@ -175,26 +172,26 @@ namespace KodiranjeTeksta {
 				
 				for (int j = 0;j < 2048;++j) {
 
-					if (result[i] == d.ElementAt(j).Value) {
+					if (result_values[i] == d.ElementAt(j).Value) {
 						dekodtext+= d.ElementAt(j).Key;
 						break;
 					}
 				}
 			}
-			dekod.Text = dekodtext;
 
+			text_dekod_form.Text = dekodtext;
 		}
 
 		private void izbrisi_tekst_kod_Click(object sender, EventArgs e) {
-			kod.ResetText();
+			text_code_form.ResetText();
 		}
 
 		private void izbrisi_kljuc_Click(object sender, EventArgs e) {
-			kljuc.ResetText();
+			key_from_form.ResetText();
 		}
 
 		private void izbrisi_tekst_dekod_Click(object sender, EventArgs e) {
-			dekod.ResetText();
+			text_dekod_form.ResetText();
 		}
 	}
 }
